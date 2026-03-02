@@ -1,15 +1,15 @@
-const scenes = document.querySelectorAll(".scene");
-let index = 0;
+document.addEventListener("DOMContentLoaded", () => {
 
-function showNextScene() {
-    scenes[index].classList.remove("active");
-    index++;
+    const music = document.getElementById("bgMusic");
 
-    if (index < scenes.length) {
-        scenes[index].classList.add("active");
-    } else {
-        clearInterval(presentation);
+    function startMusic() {
+        if (music) {
+            music.volume = 0.6; // softer romantic volume
+            music.play().catch(() => {});
+        }
+        document.removeEventListener("click", startMusic);
     }
-}
 
-const presentation = setInterval(showNextScene, 6500);
+    document.addEventListener("click", startMusic);
+
+});
