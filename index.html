@@ -9,6 +9,11 @@
 </head>
 <body>
 
+<!-- 🎵 BACKGROUND MUSIC -->
+<audio id="bgMusic" loop>
+    <source src="kaazoom-falling-in-love-with-you-as-youx27re-falling-in-love-with-me-471962.mp3" type="audio/mpeg">
+</audio>
+
 <div class="space-bg">
     <div class="nebula"></div>
     <div class="big-sun"></div>
@@ -73,6 +78,17 @@
 <section class="scene">
     <h2 class="finale">Programmed by Dudu 🐻</h2>
 </section>
+
+<script>
+const music = document.getElementById("bgMusic");
+
+function startMusic() {
+    music.play().catch(() => {});
+    document.removeEventListener("click", startMusic);
+}
+
+document.addEventListener("click", startMusic);
+</script>
 
 <script src="script.js"></script>
 </body>
