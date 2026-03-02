@@ -12,4 +12,4 @@ function showNextScene() {
     }
 }
 
-const presentation = setInterval(showNextScene, 6000);
+const presentation = setInterval(showNextScene, 6500);
